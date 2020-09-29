@@ -1,9 +1,9 @@
 #!/bin/sh
-mkdir /root/node-exporter
+mkdir /host/tmp/node-exporter
 while true;
 do
   met="node_hwmon_temp_celsius"  #出力するメトリクス名
-  dir="/root/node-exporter/"   #出力ディレクトリ
+  dir="/host/tmp/node-exporter/"   #出力ディレクトリ
   ctemp=$( cat /sys/class/thermal/thermal_zone0/temp )  #CPU温度取得
   otempa="`expr $ctemp / 1000`"
   otempb="`expr $ctemp % 1000`"
